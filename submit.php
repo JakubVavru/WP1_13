@@ -14,7 +14,13 @@ $B = filter_input(INPUT_POST, 'B');
 <?= $A . ' + ' . $B ?> = <?= $A+$B ?> <br>
 <?= $A . ' - ' . $B ?> = <?= $A-$B ?> <br>
 <?= $A . ' x ' . $B ?> = <?= $A*$B ?> <br>
-<?= $A . ' : ' . $B ?> = <?= $A/$B ?> <br>
+<?php
+if ($B == 0) {
+    echo "Nelze dělit nulou";
+} else {
+    echo $A . ' : ' . $B . ' = ' . $A/$B;
+}
 
+?>
 </body>
 </html>
